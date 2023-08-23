@@ -1,4 +1,4 @@
 node_modules
 pnpm-lock.yaml
 .env
-CompleteInstructions.md
+complete-instructions.md
