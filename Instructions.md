@@ -1,3 +1,5 @@
+<1 Initial Server Setup>
+
 1. 📁blog-api
 
 $ npm init
