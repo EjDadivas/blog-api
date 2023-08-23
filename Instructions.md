@@ -1,32 +1,8 @@
-$ npm install dotenv
-🗄️ .env
+📁routes 🗄️auth.js
+🗄️server.js
+Routes registration
 
-```
-PORT=3000
-```
+🍊POST localhost:3000/api/auth/register
+🍊POST localhost:3000/api/auth/login
 
-🗄️server.js:
-Show some changes in the console log
-
-$ npm install nodemon
-
-$ npm install mongoose
-
-# Get the connection string
-
-🗄️.env
-🗄️server.js:
-Connect to MongoDB
-Add Middleware express.json()
-$ npm install cors
-Add cors middleware
-
-$ nodemon server
-Check if connected to mongoDB
-
-🗄️package.json
-scripts
-
-```
-  "dev": "nodemon server.js"
-```
+📁models 🗄️user.js
