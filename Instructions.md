@@ -1,20 +1,32 @@
-<1 Initial Server Setup>
-
-1. 📁blog-api
-
-$ npm init
-$ npm install express
-
-2. 🗄️server.js
-   -this is where we setup the basic Express server
+$ npm install dotenv
+🗄️ .env
 
 ```
-const express = require("express");
-
-const app = express();
-
-app.listen(3000, () => console.log("Server is running"));
-
+PORT=3000
 ```
 
-$ node server
+🗄️server.js:
+Show some changes in the console log
+
+$ npm install nodemon
+
+$ npm install mongoose
+
+# Get the connection string
+
+🗄️.env
+🗄️server.js:
+Connect to MongoDB
+Add Middleware express.json()
+$ npm install cors
+Add cors middleware
+
+$ nodemon server
+Check if connected to mongoDB
+
+🗄️package.json
+scripts
+
+```
+  "dev": "nodemon server.js"
+```
