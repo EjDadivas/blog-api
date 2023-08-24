@@ -10,6 +10,13 @@ const createBlogPost = async (req, res) => {
 
     const userId = req.user._id;
 
+    // const blogPost = await BlogPost.create({
+    //   title,
+    //   content,
+    //   author: userId,
+    //   categories,
+    //   tags,
+    // });
     const blogPost = new BlogPost({
       title,
       content,
