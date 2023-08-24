@@ -52,25 +52,8 @@ const loginUser = async (req, res) => {
 };
 
 const changePassword = async (req, res) => {
-  // res.status(200).json({ msg: "change password" });
   try {
     const { password } = req.body;
-    // res.status(200).json({ password: password });
-    // res.status(200).json(req.user);
-
-    // Get the userId
-    const userId = req.user._id;
-
-    // Unhashed updated user
-    /*
-    const updated = await User.updateOne(
-      { _id: userId },
-      { password: password }
-    );
-
-    res.status(200).json(updated);
-    */
-
     // Hash the password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -87,7 +70,6 @@ const changePassword = async (req, res) => {
 };
 
 const changeEmail = async (req, res) => {
-  // res.status(200).json({ msg: "change password" });
   try {
     const { email } = req.body;
     const userId = req.user._id;
