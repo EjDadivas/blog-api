@@ -1,6 +1,29 @@
+const BlogPost = require("../models/blogPost");
+
 // Create a new blog post
-const createBlogPost = (req, res) => {
-  res.status(200).json({ msg: "Creating a post" });
+const createBlogPost = async (req, res) => {
+  //   res.status(200).json({ msg: "Creating a post" });
+
+  try {
+    const { title, content, categories, tags } = req.body;
+    console.log(categories, tags);
+
+    const userId = req.user._id;
+
+    const blogPost = new BlogPost({
+      title,
+      content,
+      author: userId,
+      categories,
+      tags,
+    });
+    console.log(userId);
+    await blogPost.save();
+
+    res.status(201).json(blogPost);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 // Retrieve all blog post
