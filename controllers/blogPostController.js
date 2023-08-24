@@ -33,8 +33,12 @@ const createBlogPost = async (req, res) => {
 // Retrieve all blog post
 const getBlogPosts = async (req, res) => {
   try {
-    const blogPosts = await BlogPost.find();
-    //TODO: Populate get BlogPost
+    const blogPosts = await BlogPost.find()
+      .populate("author", "username")
+      .populate({ path: "categories", select: "name" })
+      .populate({ path: "tags", select: "name" });
+
+    console.log(blogPosts);
     res.status(200).json(blogPosts);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
@@ -45,8 +49,10 @@ const getBlogPosts = async (req, res) => {
 const getBlogPost = async (req, res) => {
   try {
     const { id } = req.params;
-    const blogPost = await BlogPost.findById(id);
-    //TODO: Populate get BlogPost by ID
+    const blogPost = await BlogPost.findById(id)
+      .populate("author", "username")
+      .populate({ path: "categories", select: "name" })
+      .populate({ path: "tags", select: "name" });
 
     if (!blogPost) {
       return res.status(404).json({ error: "Blog post not found" });
