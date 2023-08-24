@@ -1,26 +1,31 @@
-📁routes 🗄️auth.js
-Do User Login, make it async
-Catch Error
-Check email if exists
-Check if password is correct
+📁controllers 🗄️authController.js
+Transfer imports [bcrypt, jwt, User]
+registerUser() - cut and paste
+loginUser() - cut and paste
+export
 
-For initial testing:
+📁routes 🗄️auth.js
+Import controllers
+
+Test
+
+🍊POST localhost:3000/api/auth/register
 
 ```
-res.status(200).json({ msg: "Logged in" });
+{
+    "username": "Jane Smith",
+    "email": "janesmith@example.com",
+    "password": "password456"
+}
+
 ```
 
 🍊POST localhost:3000/api/auth/login
 
 ```
 {
-    "email": "johndoe@example.com",
-    "password": "password123"
+    "username": "Jane Smith",
+    "email": "janesmith@example.com"
 }
 
 ```
-
-$ npm install jsonwebtoken
-Import jwt
-Add a secret key: 🗄️.env
-Generate a JWT Token
