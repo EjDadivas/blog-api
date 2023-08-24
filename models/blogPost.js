@@ -16,8 +16,26 @@ const blogPostSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    categories: [String],
-    tags: [String],
+    // categories: {
+    //   type: [String],
+    //   required: true,
+    // },
+    // tags: {
+    //   type: [String],
+    //   required: true,
+    // },
+    categories: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+      },
+    ],
+    tags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag",
+      },
+    ],
   },
   { timestamps: true }
 );

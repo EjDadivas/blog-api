@@ -6,6 +6,7 @@ const {
   getBlogPosts,
   getBlogPost,
   updateBlogPost,
+  patchBlogPost,
   deleteBlogPost,
 } = require("../controllers/blogPostController");
 const router = express.Router();
@@ -17,11 +18,11 @@ router.post("/", authMiddleware, createBlogPost);
 router.get("/", getBlogPosts);
 
 // Retrieve a specific blog post by ID
-router.get("/:id", authMiddleware, getBlogPost);
+router.get("/:id", getBlogPost);
 
 // Update a blog post
 router.put("/:id", authMiddleware, updateBlogPost);
-router.patch("/:id", authMiddleware);
+router.patch("/:id", authMiddleware, patchBlogPost);
 
 // Delete a blog post
 router.delete("/:id", authMiddleware, deleteBlogPost);

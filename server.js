@@ -13,8 +13,13 @@ app.use(cors());
 // Routes
 const authRoutes = require("./routes/auth");
 const blogpostRoutes = require("./routes/blogPosts");
+const categoryRoutes = require("./routes/categories");
+const tagRoutes = require("./routes/tags");
+
 app.use("/api/auth", authRoutes);
 app.use("/api/blogPosts", blogpostRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/tags", tagRoutes);
 
 // Connect to MongoDB
 mongoose
