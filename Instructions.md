@@ -24,8 +24,8 @@ Test
 
 ```
 {
-    "username": "Jane Smith",
-    "email": "janesmith@example.com"
+    "email": "janesmith@example.com",
+    "password": "password456"
 }
 
 ```
