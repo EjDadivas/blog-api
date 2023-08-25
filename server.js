@@ -15,11 +15,13 @@ const authRoutes = require("./routes/auth");
 const blogpostRoutes = require("./routes/blogPosts");
 const categoryRoutes = require("./routes/categories");
 const tagRoutes = require("./routes/tags");
+const commentRoutes = require("./routes/comments");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/blogPosts", blogpostRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/tags", tagRoutes);
+app.use("/api/comments", commentRoutes);
 
 // Connect to MongoDB
 mongoose
