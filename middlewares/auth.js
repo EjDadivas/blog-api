@@ -5,13 +5,11 @@ const authMiddleware = async (req, res, next) => {
   // Check if there is an authorization token
   const { authorization } = req.headers;
 
-  if (!authorization) {
-    return res.status(401).json({ error: "Authorization token required" });
-  }
-
   //Getting the token
   const token = authorization.split(" ")[1];
-
+  if (!token) {
+    return res.status(401).json({ error: "Authorization token required" });
+  }
   try {
     // Verifying the token
     const { userId } = jwt.verify(token, process.env.JWT_SECRET);
