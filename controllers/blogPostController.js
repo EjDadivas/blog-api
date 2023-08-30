@@ -129,7 +129,7 @@ const deleteBlogPost = async (req, res) => {
       return res.status(403).json({ error: "Unauthorized" });
     }
 
-    const deleted = await BlogPost.deleteOne({ _id: id });
+    const deleted = await blogPost.deleteOne();
     console.log(deleted);
     res.status(204).end();
   } catch (error) {
