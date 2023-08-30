@@ -54,6 +54,7 @@ const loginUser = async (req, res) => {
 const changePassword = async (req, res) => {
   try {
     const { password } = req.body;
+    const userId = req.user._id;
     // Hash the password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
